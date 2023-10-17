@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: events
+  - name: restaurants__turnover_ordered
     description: This table contains clickstream events from the marketing website
 
     columns:
