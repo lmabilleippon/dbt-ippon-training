@@ -20,6 +20,3 @@ models:
       - name: RESTAURANT_IDENTIFIER
         quote: true
         description: This is the id for a restaurant 
-        tests:
-          - unique
-      
