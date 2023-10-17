@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: events
+    description: This table contains clickstream events from the marketing website
+
+    columns:
+      - name: CLASSEMENT
+        description: This is the ranking of restaurant among others
+        tests:
+          - unique
+          - not_null
+
+      - name: AMOUNT
+        quote: true
+        description: This is the amount of sales
+        tests:
+          - not_null
+      
+      - name: RESTAURANT_IDENTIFIER
+        quote: true
+        description: This is the id for a restaurant 
+        tests:
+          - unique
+          - not_null
