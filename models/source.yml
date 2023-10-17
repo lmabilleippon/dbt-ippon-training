@@ -1,0 +1,74 @@
+sources:
+  - name: norbert
+    database: db_dbt_lmabille_dev  
+    schema: source  
+    tables:
+      - name: orders
+        columns:
+        - name: AMOUNT
+          description: This is the amount
+          tests:
+            - not_null
+
+        - name: CREATED_AT
+          quote: true
+          description: This is the creation date
+          tests:
+            - not_null
+        
+        - name: PAYMENT_METHOD
+          quote: true
+          description: This is the payment method
+          tests:
+            - not_null
+            
+        - name: RESTAURANT_IDENTIFIER
+          quote: true
+          description: This is the id for a restaurant 
+          tests:
+            - not_null
+
+        - name: IDENTIFIER
+          quote: true
+          description: This is the creation date
+          tests:
+            - not_null
+            - unique
+        
+        
+      - name: restaurants
+        columns:
+        - name: ADDRESS
+          description: This is the amount
+          tests:
+            - not_null
+
+        - name: IDENTIFIER
+          quote: true
+          description: This is the creation date
+          tests:
+            - not_null
+        
+        - name: NAME
+          quote: true
+          description: This is the payment method
+          tests:
+            - not_null
+            
+        - name: NB_EMPLOYEES
+          quote: true
+          description: This is the id for a restaurant 
+          tests:
+            - not_null
+        
+        - name: OPEN_ON_SUNDAY
+          quote: true
+          description: This is the id for a restaurant 
+          tests:
+            - not_null
+      
+
+      - name : DISHES
+      - name : FUZZY_ORDERS
+
+  

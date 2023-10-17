@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: restaurants__turnover_ordered
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('expect_restaurant_turnover')
+          tags: ['unit_testing']
+
+    description: This table contains clickstream events from the marketing website
+
+    columns:
+      - name: CLASSEMENT
+        description: This is the ranking of restaurant among others
+        tests:
+          - unique
+          - not_null
+
+      - name: AMOUNT
+        quote: true
+        description: This is the amount of sales
+        tests:
+          - not_null
+      
+      - name: RESTAURANT_IDENTIFIER
+        quote: true
+        description: This is the id for a restaurant

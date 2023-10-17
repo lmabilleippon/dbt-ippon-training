@@ -1,0 +1,1 @@
+select * from {{ source('norbert', 'FUZZY_ORDERS') }}
